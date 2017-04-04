@@ -1,0 +1,3730 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/molnarg/node-http2">http2 (v3.3.6)</a>
+</h1>
+<h4>An HTTP/2 client and server implementation</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2">module http2</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.Agent">
+            function <span class="apidocSignatureSpan">http2.</span>Agent
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.ClientRequest">
+            function <span class="apidocSignatureSpan">http2.</span>ClientRequest
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.IncomingMessage">
+            function <span class="apidocSignatureSpan">http2.</span>IncomingMessage
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.IncomingRequest">
+            function <span class="apidocSignatureSpan">http2.</span>IncomingRequest
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.IncomingResponse">
+            function <span class="apidocSignatureSpan">http2.</span>IncomingResponse
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.OutgoingMessage">
+            function <span class="apidocSignatureSpan">http2.</span>OutgoingMessage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.OutgoingRequest">
+            function <span class="apidocSignatureSpan">http2.</span>OutgoingRequest
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.OutgoingResponse">
+            function <span class="apidocSignatureSpan">http2.</span>OutgoingResponse
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.Server">
+            function <span class="apidocSignatureSpan">http2.</span>Server
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.ServerResponse">
+            function <span class="apidocSignatureSpan">http2.</span>ServerResponse
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.createServer">
+            function <span class="apidocSignatureSpan">http2.</span>createServer
+            <span class="apidocSignatureSpan">(options, requestListener)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.get">
+            function <span class="apidocSignatureSpan">http2.</span>get
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.protocol.Endpoint">
+            function <span class="apidocSignatureSpan">http2.</span>protocol.Endpoint
+            <span class="apidocSignatureSpan">(log, role, settings, filters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.request">
+            function <span class="apidocSignatureSpan">http2.</span>request
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">http2.</span>Agent.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">http2.</span>ClientRequest.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">http2.</span>IncomingMessage.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">http2.</span>IncomingRequest.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">http2.</span>IncomingResponse.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">http2.</span>OutgoingMessage.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">http2.</span>OutgoingResponse.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">http2.</span>STATUS_CODES</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">http2.</span>Server.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">http2.</span>globalAgent</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">http2.</span>http</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">http2.</span>https</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">http2.</span>protocol</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">http2.</span>protocol.Endpoint.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">http2.</span>raw</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">http2.</span>serializers</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.Agent">module http2.Agent</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.Agent.Agent">
+            function <span class="apidocSignatureSpan">http2.</span>Agent
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.Agent.prototype">module http2.Agent.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.Agent.prototype.destroy">
+            function <span class="apidocSignatureSpan">http2.Agent.prototype.</span>destroy
+            <span class="apidocSignatureSpan">(error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.Agent.prototype.get">
+            function <span class="apidocSignatureSpan">http2.Agent.prototype.</span>get
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.Agent.prototype.request">
+            function <span class="apidocSignatureSpan">http2.Agent.prototype.</span>request
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.ClientRequest">module http2.ClientRequest</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.ClientRequest.ClientRequest">
+            function <span class="apidocSignatureSpan">http2.</span>ClientRequest
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.ClientRequest.prototype">module http2.ClientRequest.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.ClientRequest.prototype._fallback">
+            function <span class="apidocSignatureSpan">http2.ClientRequest.prototype.</span>_fallback
+            <span class="apidocSignatureSpan">(request)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.ClientRequest.prototype._onPromise">
+            function <span class="apidocSignatureSpan">http2.ClientRequest.prototype.</span>_onPromise
+            <span class="apidocSignatureSpan">(stream, headers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.ClientRequest.prototype._start">
+            function <span class="apidocSignatureSpan">http2.ClientRequest.prototype.</span>_start
+            <span class="apidocSignatureSpan">(stream, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.ClientRequest.prototype.abort">
+            function <span class="apidocSignatureSpan">http2.ClientRequest.prototype.</span>abort
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.ClientRequest.prototype.on">
+            function <span class="apidocSignatureSpan">http2.ClientRequest.prototype.</span>on
+            <span class="apidocSignatureSpan">(event, listener)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.ClientRequest.prototype.setNoDelay">
+            function <span class="apidocSignatureSpan">http2.ClientRequest.prototype.</span>setNoDelay
+            <span class="apidocSignatureSpan">(noDelay)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.ClientRequest.prototype.setPriority">
+            function <span class="apidocSignatureSpan">http2.ClientRequest.prototype.</span>setPriority
+            <span class="apidocSignatureSpan">(priority)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.ClientRequest.prototype.setSocketKeepAlive">
+            function <span class="apidocSignatureSpan">http2.ClientRequest.prototype.</span>setSocketKeepAlive
+            <span class="apidocSignatureSpan">(enable, initialDelay)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.ClientRequest.prototype.setTimeout">
+            function <span class="apidocSignatureSpan">http2.ClientRequest.prototype.</span>setTimeout
+            <span class="apidocSignatureSpan">(timeout, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.IncomingMessage">module http2.IncomingMessage</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.IncomingMessage.IncomingMessage">
+            function <span class="apidocSignatureSpan">http2.</span>IncomingMessage
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.IncomingMessage.prototype">module http2.IncomingMessage.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.IncomingMessage.prototype._checkSpecialHeader">
+            function <span class="apidocSignatureSpan">http2.IncomingMessage.prototype.</span>_checkSpecialHeader
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.IncomingMessage.prototype._onEnd">
+            function <span class="apidocSignatureSpan">http2.IncomingMessage.prototype.</span>_onEnd
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.IncomingMessage.prototype._onHeaders">
+            function <span class="apidocSignatureSpan">http2.IncomingMessage.prototype.</span>_onHeaders
+            <span class="apidocSignatureSpan">(headers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.IncomingMessage.prototype._validateHeaders">
+            function <span class="apidocSignatureSpan">http2.IncomingMessage.prototype.</span>_validateHeaders
+            <span class="apidocSignatureSpan">(headers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.IncomingMessage.prototype.setTimeout">
+            function <span class="apidocSignatureSpan">http2.IncomingMessage.prototype.</span>setTimeout
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.IncomingRequest">module http2.IncomingRequest</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.IncomingRequest.IncomingRequest">
+            function <span class="apidocSignatureSpan">http2.</span>IncomingRequest
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.IncomingRequest.prototype">module http2.IncomingRequest.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.IncomingRequest.prototype._onHeaders">
+            function <span class="apidocSignatureSpan">http2.IncomingRequest.prototype.</span>_onHeaders
+            <span class="apidocSignatureSpan">(headers)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.IncomingResponse">module http2.IncomingResponse</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.IncomingResponse.IncomingResponse">
+            function <span class="apidocSignatureSpan">http2.</span>IncomingResponse
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.IncomingResponse.prototype">module http2.IncomingResponse.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.IncomingResponse.prototype._onHeaders">
+            function <span class="apidocSignatureSpan">http2.IncomingResponse.prototype.</span>_onHeaders
+            <span class="apidocSignatureSpan">(headers)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.OutgoingMessage">module http2.OutgoingMessage</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.OutgoingMessage.OutgoingMessage">
+            function <span class="apidocSignatureSpan">http2.</span>OutgoingMessage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.OutgoingMessage.prototype">module http2.OutgoingMessage.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.OutgoingMessage.prototype._checkSpecialHeader">
+            function <span class="apidocSignatureSpan">http2.OutgoingMessage.prototype.</span>_checkSpecialHeader
+            <span class="apidocSignatureSpan">(key, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.OutgoingMessage.prototype._finish">
+            function <span class="apidocSignatureSpan">http2.OutgoingMessage.prototype.</span>_finish
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.OutgoingMessage.prototype._write">
+            function <span class="apidocSignatureSpan">http2.OutgoingMessage.prototype.</span>_write
+            <span class="apidocSignatureSpan">(chunk, encoding, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.OutgoingMessage.prototype.addTrailers">
+            function <span class="apidocSignatureSpan">http2.OutgoingMessage.prototype.</span>addTrailers
+            <span class="apidocSignatureSpan">(trailers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.OutgoingMessage.prototype.getHeader">
+            function <span class="apidocSignatureSpan">http2.OutgoingMessage.prototype.</span>getHeader
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.OutgoingMessage.prototype.removeHeader">
+            function <span class="apidocSignatureSpan">http2.OutgoingMessage.prototype.</span>removeHeader
+            <span class="apidocSignatureSpan">(name)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.OutgoingMessage.prototype.setHeader">
+            function <span class="apidocSignatureSpan">http2.OutgoingMessage.prototype.</span>setHeader
+            <span class="apidocSignatureSpan">(name, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.OutgoingMessage.prototype.setTimeout">
+            function <span class="apidocSignatureSpan">http2.OutgoingMessage.prototype.</span>setTimeout
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.OutgoingResponse">module http2.OutgoingResponse</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.OutgoingResponse.OutgoingResponse">
+            function <span class="apidocSignatureSpan">http2.</span>OutgoingResponse
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.OutgoingResponse.prototype">module http2.OutgoingResponse.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.OutgoingResponse.prototype._implicitHeader">
+            function <span class="apidocSignatureSpan">http2.OutgoingResponse.prototype.</span>_implicitHeader
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.OutgoingResponse.prototype._implicitHeaders">
+            function <span class="apidocSignatureSpan">http2.OutgoingResponse.prototype.</span>_implicitHeaders
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.OutgoingResponse.prototype._onRequestHeaders">
+            function <span class="apidocSignatureSpan">http2.OutgoingResponse.prototype.</span>_onRequestHeaders
+            <span class="apidocSignatureSpan">(headers)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.OutgoingResponse.prototype.altsvc">
+            function <span class="apidocSignatureSpan">http2.OutgoingResponse.prototype.</span>altsvc
+            <span class="apidocSignatureSpan">(host, port, protocolID, maxAge, origin)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.OutgoingResponse.prototype.end">
+            function <span class="apidocSignatureSpan">http2.OutgoingResponse.prototype.</span>end
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.OutgoingResponse.prototype.on">
+            function <span class="apidocSignatureSpan">http2.OutgoingResponse.prototype.</span>on
+            <span class="apidocSignatureSpan">(event, listener)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.OutgoingResponse.prototype.push">
+            function <span class="apidocSignatureSpan">http2.OutgoingResponse.prototype.</span>push
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.OutgoingResponse.prototype.write">
+            function <span class="apidocSignatureSpan">http2.OutgoingResponse.prototype.</span>write
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.OutgoingResponse.prototype.writeHead">
+            function <span class="apidocSignatureSpan">http2.OutgoingResponse.prototype.</span>writeHead
+            <span class="apidocSignatureSpan">(statusCode, reasonPhrase, headers)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.Server">module http2.Server</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.Server.Server">
+            function <span class="apidocSignatureSpan">http2.</span>Server
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.Server.prototype">module http2.Server.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.Server.prototype._fallback">
+            function <span class="apidocSignatureSpan">http2.Server.prototype.</span>_fallback
+            <span class="apidocSignatureSpan">(socket)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.Server.prototype._start">
+            function <span class="apidocSignatureSpan">http2.Server.prototype.</span>_start
+            <span class="apidocSignatureSpan">(socket)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.Server.prototype.addContext">
+            function <span class="apidocSignatureSpan">http2.Server.prototype.</span>addContext
+            <span class="apidocSignatureSpan">(hostname, credentials)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.Server.prototype.address">
+            function <span class="apidocSignatureSpan">http2.Server.prototype.</span>address
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.Server.prototype.close">
+            function <span class="apidocSignatureSpan">http2.Server.prototype.</span>close
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.Server.prototype.listen">
+            function <span class="apidocSignatureSpan">http2.Server.prototype.</span>listen
+            <span class="apidocSignatureSpan">(port, hostname)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.Server.prototype.on">
+            function <span class="apidocSignatureSpan">http2.Server.prototype.</span>on
+            <span class="apidocSignatureSpan">(event, listener)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.Server.prototype.setTimeout">
+            function <span class="apidocSignatureSpan">http2.Server.prototype.</span>setTimeout
+            <span class="apidocSignatureSpan">(timeout, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.http">module http2.http</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.http.createServer">
+            function <span class="apidocSignatureSpan">http2.http.</span>createServer
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.http.get">
+            function <span class="apidocSignatureSpan">http2.http.</span>get
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.http.request">
+            function <span class="apidocSignatureSpan">http2.http.</span>request
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.https">module http2.https</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.https.createServer">
+            function <span class="apidocSignatureSpan">http2.https.</span>createServer
+            <span class="apidocSignatureSpan">(options, requestListener)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.https.get">
+            function <span class="apidocSignatureSpan">http2.https.</span>get
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.https.request">
+            function <span class="apidocSignatureSpan">http2.https.</span>request
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.protocol">module http2.protocol</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.protocol.Endpoint">
+            function <span class="apidocSignatureSpan">http2.protocol.</span>Endpoint
+            <span class="apidocSignatureSpan">(log, role, settings, filters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">http2.protocol.</span>serializers</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">http2.protocol.</span>VERSION</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.protocol.Endpoint">module http2.protocol.Endpoint</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.protocol.Endpoint.Endpoint">
+            function <span class="apidocSignatureSpan">http2.protocol.</span>Endpoint
+            <span class="apidocSignatureSpan">(log, role, settings, filters)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.protocol.Endpoint.prototype">module http2.protocol.Endpoint.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.protocol.Endpoint.prototype._error">
+            function <span class="apidocSignatureSpan">http2.protocol.Endpoint.prototype.</span>_error
+            <span class="apidocSignatureSpan">(component, error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.protocol.Endpoint.prototype._initializeDataFlow">
+            function <span class="apidocSignatureSpan">http2.protocol.Endpoint.prototype.</span>_initializeDataFlow
+            <span class="apidocSignatureSpan">(role, settings, filters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.protocol.Endpoint.prototype._initializeErrorHandling">
+            function <span class="apidocSignatureSpan">http2.protocol.Endpoint.prototype.</span>_initializeErrorHandling
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.protocol.Endpoint.prototype._initializeManagement">
+            function <span class="apidocSignatureSpan">http2.protocol.Endpoint.prototype.</span>_initializeManagement
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.protocol.Endpoint.prototype._read">
+            function <span class="apidocSignatureSpan">http2.protocol.Endpoint.prototype.</span>_read
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.protocol.Endpoint.prototype._readPrelude">
+            function <span class="apidocSignatureSpan">http2.protocol.Endpoint.prototype.</span>_readPrelude
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.protocol.Endpoint.prototype._write">
+            function <span class="apidocSignatureSpan">http2.protocol.Endpoint.prototype.</span>_write
+            <span class="apidocSignatureSpan">(chunk, encoding, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.protocol.Endpoint.prototype._writePrelude">
+            function <span class="apidocSignatureSpan">http2.protocol.Endpoint.prototype.</span>_writePrelude
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.protocol.Endpoint.prototype.close">
+            function <span class="apidocSignatureSpan">http2.protocol.Endpoint.prototype.</span>close
+            <span class="apidocSignatureSpan">(error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.protocol.Endpoint.prototype.createStream">
+            function <span class="apidocSignatureSpan">http2.protocol.Endpoint.prototype.</span>createStream
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.raw">module http2.raw</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.raw.createServer">
+            function <span class="apidocSignatureSpan">http2.raw.</span>createServer
+            <span class="apidocSignatureSpan">(options, requestListener)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.raw.get">
+            function <span class="apidocSignatureSpan">http2.raw.</span>get
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.raw.request">
+            function <span class="apidocSignatureSpan">http2.raw.</span>request
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.http2.serializers">module http2.serializers</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.serializers.data">
+            function <span class="apidocSignatureSpan">http2.serializers.</span>data
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.serializers.e">
+            function <span class="apidocSignatureSpan">http2.serializers.</span>e
+            <span class="apidocSignatureSpan">(endpoint)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.serializers.frame">
+            function <span class="apidocSignatureSpan">http2.serializers.</span>frame
+            <span class="apidocSignatureSpan">(frame)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.http2.serializers.s">
+            function <span class="apidocSignatureSpan">http2.serializers.</span>s
+            <span class="apidocSignatureSpan">(stream)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2" id="apidoc.module.http2">module http2</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.Agent" id="apidoc.element.http2.Agent">
+        function <span class="apidocSignatureSpan">http2.</span>Agent
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Agent(options) {
+  EventEmitter.call(this);
+  this.setMaxListeners(0);
+
+  options = util._extend({}, options);
+
+  this._settings = options.settings;
+  this._log = (options.log || defaultLogger).child({ component: 'http' });
+  this.endpoints = {};
+
+  // * Using an own HTTPS agent, because the global agent does not look at `NPN/ALPNProtocols` when
+  //   generating the key identifying the connection, so we may get useless non-negotiated TLS
+  //   channels even if we ask for a negotiated one. This agent will contain only negotiated
+  //   channels.
+  options.ALPNProtocols = supportedProtocols;
+  options.NPNProtocols = supportedProtocols;
+  this._httpsAgent = new https.Agent(options);
+
+  this.sockets = this._httpsAgent.sockets;
+  this.requests = this._httpsAgent.requests;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.ClientRequest" id="apidoc.element.http2.ClientRequest">
+        function <span class="apidocSignatureSpan">http2.</span>ClientRequest
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function OutgoingRequest() {
+  OutgoingMessage.call(this);
+
+  this._log = undefined;
+
+  this.stream = undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.IncomingMessage" id="apidoc.element.http2.IncomingMessage">
+        function <span class="apidocSignatureSpan">http2.</span>IncomingMessage
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IncomingMessage(stream) {
+  // * This is basically a read-only wrapper for the [Stream](protocol/stream.html) class.
+  PassThrough.call(this);
+  stream.pipe(this);
+  this.socket = this.stream = stream;
+
+  this._log = stream._log.child({ component: 'http' });
+
+  // * HTTP/2.0 does not define a way to carry the version identifier that is included in the
+  //   HTTP/1.1 request/status line. Version is always 2.0.
+  this.httpVersion = '2.0';
+  this.httpVersionMajor = 2;
+  this.httpVersionMinor = 0;
+
+  // * `this.headers` will store the regular headers (and none of the special colon headers)
+  this.headers = {};
+  this.trailers = undefined;
+  this._lastHeadersSeen = undefined;
+
+  // * Other metadata is filled in when the headers arrive.
+  stream.once('headers', this._onHeaders.bind(this));
+  stream.once('end', this._onEnd.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.IncomingRequest" id="apidoc.element.http2.IncomingRequest">
+        function <span class="apidocSignatureSpan">http2.</span>IncomingRequest
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IncomingRequest(stream) {
+  IncomingMessage.call(this, stream);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.IncomingResponse" id="apidoc.element.http2.IncomingResponse">
+        function <span class="apidocSignatureSpan">http2.</span>IncomingResponse
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IncomingResponse(stream) {
+  IncomingMessage.call(this, stream);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.OutgoingMessage" id="apidoc.element.http2.OutgoingMessage">
+        function <span class="apidocSignatureSpan">http2.</span>OutgoingMessage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function OutgoingMessage() {
+  // * This is basically a read-only wrapper for the [Stream](protocol/stream.html) class.
+  Writable.call(this);
+
+  this._headers = {};
+  this._trailers = undefined;
+  this.headersSent = false;
+  this.finished = false;
+
+  this.on('finish', this._finish);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.OutgoingRequest" id="apidoc.element.http2.OutgoingRequest">
+        function <span class="apidocSignatureSpan">http2.</span>OutgoingRequest
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function OutgoingRequest() {
+  OutgoingMessage.call(this);
+
+  this._log = undefined;
+
+  this.stream = undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.OutgoingResponse" id="apidoc.element.http2.OutgoingResponse">
+        function <span class="apidocSignatureSpan">http2.</span>OutgoingResponse
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function OutgoingResponse(stream) {
+  OutgoingMessage.call(this);
+
+  this._log = stream._log.child({ component: 'http' });
+
+  this.stream = stream;
+  this.statusCode = 200;
+  this.sendDate = true;
+
+  this.stream.once('headers', this._onRequestHeaders.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.Server" id="apidoc.element.http2.Server">
+        function <span class="apidocSignatureSpan">http2.</span>Server
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Server(options) {
+  options = util._extend({}, options);
+
+  this._log = (options.log || defaultLogger).child({ component: 'http' });
+  this._settings = options.settings;
+
+  var start = this._start.bind(this);
+  var fallback = this._fallback.bind(this);
+
+  // HTTP2 over TLS (using NPN or ALPN)
+  if ((options.key &amp;&amp; options.cert) || options.pfx) {
+    this._log.info('Creating HTTP/2 server over TLS');
+    this._mode = 'tls';
+    options.ALPNProtocols = supportedProtocols;
+    options.NPNProtocols = supportedProtocols;
+    options.ciphers = options.ciphers || cipherSuites;
+    options.honorCipherOrder = (options.honorCipherOrder != false);
+    this._server = https.createServer(options);
+    this._originalSocketListeners = this._server.listeners('secureConnection');
+    this._server.removeAllListeners('secureConnection');
+    this._server.on('secureConnection', function(socket) {
+      var negotiatedProtocol = socket.alpnProtocol || socket.npnProtocol;
+      // It's true that the client MUST use SNI, but if it doesn't, we don't care, don't fall back to HTTP/1,
+      // since if the ALPN negotiation is otherwise successful, the client thinks we speak HTTP/2 but we don't.
+      if (negotiatedProtocol === protocol.VERSION) {
+        start(socket);
+      } else {
+        fallback(socket);
+      }
+    });
+    this._server.on('request', this.emit.bind(this, 'request'));
+
+    forwardEvent('error', this._server, this);
+    forwardEvent('listening', this._server, this);
+  }
+
+  // HTTP2 over plain TCP
+  else if (options.plain) {
+    this._log.info('Creating HTTP/2 server over plain TCP');
+    this._mode = 'plain';
+    this._server = net.createServer(start);
+  }
+
+  // HTTP/2 with HTTP/1.1 upgrade
+  else {
+    this._log.error('Trying to create HTTP/2 server with Upgrade from HTTP/1.1');
+    throw new Error('HTTP1.1 -&gt; HTTP2 upgrade is not yet supported. Please provide TLS keys.');
+  }
+
+  this._server.on('close', this.emit.bind(this, 'close'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.ServerResponse" id="apidoc.element.http2.ServerResponse">
+        function <span class="apidocSignatureSpan">http2.</span>ServerResponse
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function OutgoingResponse(stream) {
+  OutgoingMessage.call(this);
+
+  this._log = stream._log.child({ component: 'http' });
+
+  this.stream = stream;
+  this.statusCode = 200;
+  this.sendDate = true;
+
+  this.stream.once('headers', this._onRequestHeaders.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.createServer" id="apidoc.element.http2.createServer">
+        function <span class="apidocSignatureSpan">http2.</span>createServer
+        <span class="apidocSignatureSpan">(options, requestListener)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createServerTLS(options, requestListener) {
+  if (typeof options === 'function') {
+    throw new Error('options are required!');
+  }
+  if (!options.pfx &amp;&amp; !(options.key &amp;&amp; options.cert)) {
+    throw new Error('options.pfx or options.key and options.cert are required!');
+  }
+  options.plain = false;
+
+  var server = new Server(options);
+
+  if (requestListener) {
+    server.on('request', requestListener);
+  }
+
+  return server;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var options = {
+  key: fs.readFileSync('./example/localhost.key'),
+  cert: fs.readFileSync('./example/localhost.crt')
+};
+
+require('http2').<span class="apidocCodeKeywordSpan">createServer</span>(options, function(request, response) {
+  response.end('Hello world!');
+}).listen(8080);
+```
+
+### Using as a client ###
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.get" id="apidoc.element.http2.get">
+        function <span class="apidocSignatureSpan">http2.</span>get
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getTLS(options, callback) {
+  if (typeof options === "string") {
+    options = url.parse(options);
+  }
+  options.plain = false;
+  if (options.protocol &amp;&amp; options.protocol !== "https:") {
+    throw new Error('This interface only supports https-schemed URLs');
+  }
+  if (options.agent &amp;&amp; typeof(options.agent.get) === 'function') {
+    var agentOptions = util._extend({}, options);
+    delete agentOptions.agent;
+    return options.agent.get(agentOptions, callback);
+  }
+  return exports.globalAgent.get(options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  response.end('Hello world!');
+}).listen(8080);
+```
+
+### Using as a client ###
+
+```javascript
+require('http2').<span class="apidocCodeKeywordSpan">get</span>('https://localhost:8080/', function(response
+) {
+  response.pipe(process.stdout);
+});
+```
+
+### Simple static file server ###
+
+An simple static file server serving up content from its own directory is available in the `example`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.protocol.Endpoint" id="apidoc.element.http2.protocol.Endpoint">
+        function <span class="apidocSignatureSpan">http2.</span>protocol.Endpoint
+        <span class="apidocSignatureSpan">(log, role, settings, filters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Endpoint(log, role, settings, filters) {
+  Duplex.call(this);
+
+  // * Initializing logging infrastructure
+  this._log = log.child({ component: 'endpoint', e: this });
+
+  // * First part of the handshake process: sending and receiving the client connection header
+  //   prelude.
+  assert((role === 'CLIENT') || role === 'SERVER');
+  if (role === 'CLIENT') {
+    this._writePrelude();
+  } else {
+    this._readPrelude();
+  }
+
+  // * Initialization of component. This includes the second part of the handshake process:
+  //   sending the first SETTINGS frame. This is done by the connection class right after
+  //   initialization.
+  this._initializeDataFlow(role, settings, filters || {});
+
+  // * Initialization of management code.
+  this._initializeManagement();
+
+  // * Initializing error handling.
+  this._initializeErrorHandling();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.request" id="apidoc.element.http2.request">
+        function <span class="apidocSignatureSpan">http2.</span>request
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function requestTLS(options, callback) {
+  if (typeof options === "string") {
+    options = url.parse(options);
+  }
+  options.plain = false;
+  if (options.protocol &amp;&amp; options.protocol !== "https:") {
+    throw new Error('This interface only supports https-schemed URLs');
+  }
+  if (options.agent &amp;&amp; typeof(options.agent.request) === 'function') {
+    var agentOptions = util._extend({}, options);
+    delete agentOptions.agent;
+    return options.agent.request(agentOptions, callback);
+  }
+  return exports.globalAgent.request(options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.Agent" id="apidoc.module.http2.Agent">module http2.Agent</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.Agent.Agent" id="apidoc.element.http2.Agent.Agent">
+        function <span class="apidocSignatureSpan">http2.</span>Agent
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Agent(options) {
+  EventEmitter.call(this);
+  this.setMaxListeners(0);
+
+  options = util._extend({}, options);
+
+  this._settings = options.settings;
+  this._log = (options.log || defaultLogger).child({ component: 'http' });
+  this.endpoints = {};
+
+  // * Using an own HTTPS agent, because the global agent does not look at `NPN/ALPNProtocols` when
+  //   generating the key identifying the connection, so we may get useless non-negotiated TLS
+  //   channels even if we ask for a negotiated one. This agent will contain only negotiated
+  //   channels.
+  options.ALPNProtocols = supportedProtocols;
+  options.NPNProtocols = supportedProtocols;
+  this._httpsAgent = new https.Agent(options);
+
+  this.sockets = this._httpsAgent.sockets;
+  this.requests = this._httpsAgent.requests;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.Agent.prototype" id="apidoc.module.http2.Agent.prototype">module http2.Agent.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.Agent.prototype.destroy" id="apidoc.element.http2.Agent.prototype.destroy">
+        function <span class="apidocSignatureSpan">http2.Agent.prototype.</span>destroy
+        <span class="apidocSignatureSpan">(error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">destroy = function (error) {
+  if (this._httpsAgent) {
+    this._httpsAgent.destroy();
+  }
+  for (var key in this.endpoints) {
+    this.endpoints[key].close(error);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.Agent.prototype.get" id="apidoc.element.http2.Agent.prototype.get">
+        function <span class="apidocSignatureSpan">http2.Agent.prototype.</span>get
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function get(options, callback) {
+  var request = this.request(options, callback);
+  request.end();
+  return request;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  response.end('Hello world!');
+}).listen(8080);
+```
+
+### Using as a client ###
+
+```javascript
+require('http2').<span class="apidocCodeKeywordSpan">get</span>('https://localhost:8080/', function(response
+) {
+  response.pipe(process.stdout);
+});
+```
+
+### Simple static file server ###
+
+An simple static file server serving up content from its own directory is available in the `example`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.Agent.prototype.request" id="apidoc.element.http2.Agent.prototype.request">
+        function <span class="apidocSignatureSpan">http2.Agent.prototype.</span>request
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function request(options, callback) {
+  if (typeof options === 'string') {
+    options = url.parse(options);
+  } else {
+    options = util._extend({}, options);
+  }
+
+  options.method = (options.method || 'GET').toUpperCase();
+  options.protocol = options.protocol || 'https:';
+  options.host = options.hostname || options.host || 'localhost';
+  options.port = options.port || 443;
+  options.path = options.path || '/';
+
+  if (!options.plain &amp;&amp; options.protocol === 'http:') {
+    this._log.error('Trying to negotiate client request with Upgrade from HTTP/1.1');
+    this.emit('error', new Error('HTTP1.1 -&gt; HTTP2 upgrade is not yet supported.'));
+  }
+
+  var request = new OutgoingRequest(this._log);
+
+  if (callback) {
+    request.on('response', callback);
+  }
+
+  var key = [
+    !!options.plain,
+    options.host,
+    options.port
+  ].join(':');
+  var self = this;
+
+  // * There's an existing HTTP/2 connection to this host
+  if (key in this.endpoints) {
+    var endpoint = this.endpoints[key];
+    request._start(endpoint.createStream(), options);
+  }
+
+  // * HTTP/2 over plain TCP
+  else if (options.plain) {
+    endpoint = new Endpoint(this._log, 'CLIENT', this._settings);
+    endpoint.socket = net.connect({
+      host: options.host,
+      port: options.port,
+      localAddress: options.localAddress
+    });
+
+    endpoint.socket.on('error', function (error) {
+      self._log.error('Socket error: ' + error.toString());
+      request.emit('error', error);
+    });
+
+    endpoint.on('error', function(error){
+      self._log.error('Connection error: ' + error.toString());
+      request.emit('error', error);
+    });
+
+    this.endpoints[key] = endpoint;
+    endpoint.pipe(endpoint.socket).pipe(endpoint);
+    request._start(endpoint.createStream(), options);
+  }
+
+  // * HTTP/2 over TLS negotiated using NPN or ALPN, or fallback to HTTPS1
+  else {
+    var started = false;
+    var createAgent = hasAgentOptions(options);
+    options.ALPNProtocols = supportedProtocols;
+    options.NPNProtocols = supportedProtocols;
+    options.servername = options.host; // Server Name Indication
+    options.ciphers = options.ciphers || cipherSuites;
+    if (createAgent) {
+      options.agent = new https.Agent(options);
+    } else if (options.agent == null) {
+      options.agent = this._httpsAgent;
+    }
+    var httpsRequest = https.request(options);
+
+    httpsRequest.on('error', function (error) {
+      self._log.error('Socket error: ' + error.toString());
+      self.removeAllListeners(key);
+      request.emit('error', error);
+    });
+
+    httpsRequest.on('socket', function(socket) {
+      var negotiatedProtocol = socket.alpnProtocol || socket.npnProtocol;
+      if (negotiatedProtocol != null) { // null in &gt;=0.11.0, undefined in &lt;0.11.0
+        negotiated();
+      } else {
+        socket.on('secureConnect', negotiated);
+      }
+    });
+
+    function negotiated() {
+      var endpoint;
+      var negotiatedProtocol = httpsRequest.socket.alpnProtocol || httpsRequest.socket.npnProtocol;
+      if (negotiatedProtocol === protocol.VERSION) {
+        httpsRequest.socket.emit('agentRemove');
+        unbundleSocket(httpsRequest.socket);
+        endpoint = new Endpoint(self._log, 'CLIENT', self._settings);
+        endpoint.socket = httpsRequest.socket;
+        endpoint.pipe(endpoint.socket).pipe(endpoint);
+      }
+      if (started) {
+        // ** In the meantime, an other connection was made to the same host...
+        if (endpoint) {
+          // *** and it turned out to be HTTP2 and the request was multiplexed on that one, so we should close this one
+          endpoint.close();
+        }
+        // *** otherwise, the fallback to HTTPS1 is already done.
+      } else {
+        if (endpoint) {
+          self._log.info({ e: endpoint, server: options.host + ':' + options.port },
+                         'New outgoing HTTP/2 connection');
+          self.endpoints[key] = endpoint;
+          self.emit(key, endpoint);
+        } else {
+          self.emit(key, undefined);
+        }
+      }
+    }
+
+    this.once(key, function(endpoint) {
+      started = true;
+      if (endpoint) { ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.ClientRequest" id="apidoc.module.http2.ClientRequest">module http2.ClientRequest</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.ClientRequest.ClientRequest" id="apidoc.element.http2.ClientRequest.ClientRequest">
+        function <span class="apidocSignatureSpan">http2.</span>ClientRequest
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function OutgoingRequest() {
+  OutgoingMessage.call(this);
+
+  this._log = undefined;
+
+  this.stream = undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.ClientRequest.prototype" id="apidoc.module.http2.ClientRequest.prototype">module http2.ClientRequest.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.ClientRequest.prototype._fallback" id="apidoc.element.http2.ClientRequest.prototype._fallback">
+        function <span class="apidocSignatureSpan">http2.ClientRequest.prototype.</span>_fallback
+        <span class="apidocSignatureSpan">(request)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _fallback(request) {
+  request.on('response', this.emit.bind(this, 'response'));
+  this.stream = this.request = request;
+  this.emit('socket', this.socket);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.ClientRequest.prototype._onPromise" id="apidoc.element.http2.ClientRequest.prototype._onPromise">
+        function <span class="apidocSignatureSpan">http2.ClientRequest.prototype.</span>_onPromise
+        <span class="apidocSignatureSpan">(stream, headers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _onPromise(stream, headers) {
+  this._log.info({ push_stream: stream.id }, 'Receiving push promise');
+
+  var promise = new IncomingPromise(stream, headers);
+
+  if (this.listeners('push').length &gt; 0) {
+    this.emit('push', promise);
+  } else {
+    promise.cancel();
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.ClientRequest.prototype._start" id="apidoc.element.http2.ClientRequest.prototype._start">
+        function <span class="apidocSignatureSpan">http2.ClientRequest.prototype.</span>_start
+        <span class="apidocSignatureSpan">(stream, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _start(stream, options) {
+  this.stream = stream;
+  this.options = options;
+
+  this._log = stream._log.child({ component: 'http' });
+
+  for (var key in options.headers) {
+    this.setHeader(key, options.headers[key]);
+  }
+  var headers = this._headers;
+  delete headers.host;
+
+  if (options.auth) {
+    headers.authorization = 'Basic ' + new Buffer(options.auth).toString('base64');
+  }
+
+  headers[':scheme'] = options.protocol.slice(0, -1);
+  headers[':method'] = options.method;
+  headers[':authority'] = options.host;
+  headers[':path'] = options.path;
+
+  this._log.info({ scheme: headers[':scheme'], method: headers[':method'],
+                   authority: headers[':authority'], path: headers[':path'],
+                   headers: (options.headers || {}) }, 'Sending request');
+  this.stream.headers(headers);
+  this.headersSent = true;
+
+  this.emit('socket', this.stream);
+  var response = new IncomingResponse(this.stream);
+  response.req = this;
+  response.once('ready', this.emit.bind(this, 'response', response));
+
+  this.stream.on('promise', this._onPromise.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.ClientRequest.prototype.abort" id="apidoc.element.http2.ClientRequest.prototype.abort">
+        function <span class="apidocSignatureSpan">http2.ClientRequest.prototype.</span>abort
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function abort() {
+  if (this.request) {
+    this.request.abort();
+  } else if (this.stream) {
+    this.stream.reset('CANCEL');
+  } else {
+    this.on('socket', this.abort.bind(this));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.ClientRequest.prototype.on" id="apidoc.element.http2.ClientRequest.prototype.on">
+        function <span class="apidocSignatureSpan">http2.ClientRequest.prototype.</span>on
+        <span class="apidocSignatureSpan">(event, listener)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function on(event, listener) {
+  if (this.request &amp;&amp; (event === 'upgrade')) {
+    this.request.on(event, listener &amp;&amp; listener.bind(this));
+  } else {
+    OutgoingMessage.prototype.on.call(this, event, listener);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.ClientRequest.prototype.setNoDelay" id="apidoc.element.http2.ClientRequest.prototype.setNoDelay">
+        function <span class="apidocSignatureSpan">http2.ClientRequest.prototype.</span>setNoDelay
+        <span class="apidocSignatureSpan">(noDelay)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setNoDelay(noDelay) {
+  if (this.request) {
+    this.request.setNoDelay(noDelay);
+  } else if (!this.stream) {
+    this.on('socket', this.setNoDelay.bind(this, noDelay));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.ClientRequest.prototype.setPriority" id="apidoc.element.http2.ClientRequest.prototype.setPriority">
+        function <span class="apidocSignatureSpan">http2.ClientRequest.prototype.</span>setPriority
+        <span class="apidocSignatureSpan">(priority)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setPriority(priority) {
+  if (this.stream) {
+    this.stream.priority(priority);
+  } else {
+    this.once('socket', this.setPriority.bind(this, priority));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.ClientRequest.prototype.setSocketKeepAlive" id="apidoc.element.http2.ClientRequest.prototype.setSocketKeepAlive">
+        function <span class="apidocSignatureSpan">http2.ClientRequest.prototype.</span>setSocketKeepAlive
+        <span class="apidocSignatureSpan">(enable, initialDelay)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setSocketKeepAlive(enable, initialDelay) {
+  if (this.request) {
+    this.request.setSocketKeepAlive(enable, initialDelay);
+  } else if (!this.stream) {
+    this.on('socket', this.setSocketKeepAlive.bind(this, enable, initialDelay));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.ClientRequest.prototype.setTimeout" id="apidoc.element.http2.ClientRequest.prototype.setTimeout">
+        function <span class="apidocSignatureSpan">http2.ClientRequest.prototype.</span>setTimeout
+        <span class="apidocSignatureSpan">(timeout, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setTimeout(timeout, callback) {
+  if (this.request) {
+    this.request.setTimeout(timeout, callback);
+  } else if (!this.stream) {
+    this.on('socket', this.setTimeout.bind(this, timeout, callback));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.IncomingMessage" id="apidoc.module.http2.IncomingMessage">module http2.IncomingMessage</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.IncomingMessage.IncomingMessage" id="apidoc.element.http2.IncomingMessage.IncomingMessage">
+        function <span class="apidocSignatureSpan">http2.</span>IncomingMessage
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IncomingMessage(stream) {
+  // * This is basically a read-only wrapper for the [Stream](protocol/stream.html) class.
+  PassThrough.call(this);
+  stream.pipe(this);
+  this.socket = this.stream = stream;
+
+  this._log = stream._log.child({ component: 'http' });
+
+  // * HTTP/2.0 does not define a way to carry the version identifier that is included in the
+  //   HTTP/1.1 request/status line. Version is always 2.0.
+  this.httpVersion = '2.0';
+  this.httpVersionMajor = 2;
+  this.httpVersionMinor = 0;
+
+  // * `this.headers` will store the regular headers (and none of the special colon headers)
+  this.headers = {};
+  this.trailers = undefined;
+  this._lastHeadersSeen = undefined;
+
+  // * Other metadata is filled in when the headers arrive.
+  stream.once('headers', this._onHeaders.bind(this));
+  stream.once('end', this._onEnd.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.IncomingMessage.prototype" id="apidoc.module.http2.IncomingMessage.prototype">module http2.IncomingMessage.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.IncomingMessage.prototype._checkSpecialHeader" id="apidoc.element.http2.IncomingMessage.prototype._checkSpecialHeader">
+        function <span class="apidocSignatureSpan">http2.IncomingMessage.prototype.</span>_checkSpecialHeader
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _checkSpecialHeader(key, value) {
+  if ((typeof value !== 'string') || (value.length === 0)) {
+    this._log.error({ key: key, value: value }, 'Invalid or missing special header field');
+    this.stream.reset('PROTOCOL_ERROR');
+  }
+
+  return value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.IncomingMessage.prototype._onEnd" id="apidoc.element.http2.IncomingMessage.prototype._onEnd">
+        function <span class="apidocSignatureSpan">http2.IncomingMessage.prototype.</span>_onEnd
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _onEnd() {
+  this.trailers = this._lastHeadersSeen;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.IncomingMessage.prototype._onHeaders" id="apidoc.element.http2.IncomingMessage.prototype._onHeaders">
+        function <span class="apidocSignatureSpan">http2.IncomingMessage.prototype.</span>_onHeaders
+        <span class="apidocSignatureSpan">(headers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _onHeaders(headers) {
+  // * Detects malformed headers
+  this._validateHeaders(headers);
+
+  // * Store the _regular_ headers in `this.headers`
+  for (var name in headers) {
+    if (name[0] !== ':') {
+      if (name === 'set-cookie' &amp;&amp; !Array.isArray(headers[name])) {
+        this.headers[name] = [headers[name]];
+      } else {
+        this.headers[name] = headers[name];
+      }
+    }
+  }
+
+  // * The last header block, if it's not the first, will represent the trailers
+  var self = this;
+  this.stream.on('headers', function(headers) {
+    self._lastHeadersSeen = headers;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.IncomingMessage.prototype._validateHeaders" id="apidoc.element.http2.IncomingMessage.prototype._validateHeaders">
+        function <span class="apidocSignatureSpan">http2.IncomingMessage.prototype.</span>_validateHeaders
+        <span class="apidocSignatureSpan">(headers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _validateHeaders(headers) {
+  // * An HTTP/2.0 request or response MUST NOT include any of the following header fields:
+  //   Connection, Host, Keep-Alive, Proxy-Connection, Transfer-Encoding, and Upgrade. A server
+  //   MUST treat the presence of any of these header fields as a stream error of type
+  //   PROTOCOL_ERROR.
+  //  If the TE header is present, it's only valid value is 'trailers'
+  for (var i = 0; i &lt; deprecatedHeaders.length; i++) {
+    var key = deprecatedHeaders[i];
+    if (key in headers || (key === 'te' &amp;&amp; headers[key] !== 'trailers')) {
+      this._log.error({ key: key, value: headers[key] }, 'Deprecated header found');
+      this.stream.reset('PROTOCOL_ERROR');
+      return;
+    }
+  }
+
+  for (var headerName in headers) {
+    // * Empty header name field is malformed
+    if (headerName.length &lt;= 1) {
+      this.stream.reset('PROTOCOL_ERROR');
+      return;
+    }
+    // * A request or response containing uppercase header name field names MUST be
+    //   treated as malformed (Section 8.1.3.5). Implementations that detect malformed
+    //   requests or responses need to ensure that the stream ends.
+    if(/[A-Z]/.test(headerName)) {
+      this.stream.reset('PROTOCOL_ERROR');
+      return;
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.IncomingMessage.prototype.setTimeout" id="apidoc.element.http2.IncomingMessage.prototype.setTimeout">
+        function <span class="apidocSignatureSpan">http2.IncomingMessage.prototype.</span>setTimeout
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function noop() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.IncomingRequest" id="apidoc.module.http2.IncomingRequest">module http2.IncomingRequest</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.IncomingRequest.IncomingRequest" id="apidoc.element.http2.IncomingRequest.IncomingRequest">
+        function <span class="apidocSignatureSpan">http2.</span>IncomingRequest
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IncomingRequest(stream) {
+  IncomingMessage.call(this, stream);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.IncomingRequest.prototype" id="apidoc.module.http2.IncomingRequest.prototype">module http2.IncomingRequest.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.IncomingRequest.prototype._onHeaders" id="apidoc.element.http2.IncomingRequest.prototype._onHeaders">
+        function <span class="apidocSignatureSpan">http2.IncomingRequest.prototype.</span>_onHeaders
+        <span class="apidocSignatureSpan">(headers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _onHeaders(headers) {
+  // * The ":method" header field includes the HTTP method
+  // * The ":scheme" header field includes the scheme portion of the target URI
+  // * The ":authority" header field includes the authority portion of the target URI
+  // * The ":path" header field includes the path and query parts of the target URI.
+  //   This field MUST NOT be empty; URIs that do not contain a path component MUST include a value
+  //   of '/', unless the request is an OPTIONS request for '*', in which case the ":path" header
+  //   field MUST include '*'.
+  // * All HTTP/2.0 requests MUST include exactly one valid value for all of these header fields. A
+  //   server MUST treat the absence of any of these header fields, presence of multiple values, or
+  //   an invalid value as a stream error of type PROTOCOL_ERROR.
+  this.method = this._checkSpecialHeader(':method'   , headers[':method']);
+  this.scheme = this._checkSpecialHeader(':scheme'   , headers[':scheme']);
+  this.host   = this._checkSpecialHeader(':authority', headers[':authority']  );
+  this.url    = this._checkSpecialHeader(':path'     , headers[':path']  );
+  if (!this.method || !this.scheme || !this.host || !this.url) {
+    // This is invalid, and we've sent a RST_STREAM, so don't continue processing
+    return;
+  }
+
+  // * Host header is included in the headers object for backwards compatibility.
+  this.headers.host = this.host;
+
+  // * Handling regular headers.
+  IncomingMessage.prototype._onHeaders.call(this, headers);
+
+  // * Signaling that the headers arrived.
+  this._log.info({ method: this.method, scheme: this.scheme, host: this.host,
+                   path: this.url, headers: this.headers }, 'Incoming request');
+  this.emit('ready');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.IncomingResponse" id="apidoc.module.http2.IncomingResponse">module http2.IncomingResponse</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.IncomingResponse.IncomingResponse" id="apidoc.element.http2.IncomingResponse.IncomingResponse">
+        function <span class="apidocSignatureSpan">http2.</span>IncomingResponse
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function IncomingResponse(stream) {
+  IncomingMessage.call(this, stream);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.IncomingResponse.prototype" id="apidoc.module.http2.IncomingResponse.prototype">module http2.IncomingResponse.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.IncomingResponse.prototype._onHeaders" id="apidoc.element.http2.IncomingResponse.prototype._onHeaders">
+        function <span class="apidocSignatureSpan">http2.IncomingResponse.prototype.</span>_onHeaders
+        <span class="apidocSignatureSpan">(headers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _onHeaders(headers) {
+  // * A single ":status" header field is defined that carries the HTTP status code field. This
+  //   header field MUST be included in all responses.
+  // * A client MUST treat the absence of the ":status" header field, the presence of multiple
+  //   values, or an invalid value as a stream error of type PROTOCOL_ERROR.
+  //   Note: currently, we do not enforce it strictly: we accept any format, and parse it as int
+  // * HTTP/2.0 does not define a way to carry the reason phrase that is included in an HTTP/1.1
+  //   status line.
+  this.statusCode = parseInt(this._checkSpecialHeader(':status', headers[':status']));
+
+  // * Handling regular headers.
+  IncomingMessage.prototype._onHeaders.call(this, headers);
+
+  // * Signaling that the headers arrived.
+  this._log.info({ status: this.statusCode, headers: this.headers}, 'Incoming response');
+  this.emit('ready');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.OutgoingMessage" id="apidoc.module.http2.OutgoingMessage">module http2.OutgoingMessage</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.OutgoingMessage.OutgoingMessage" id="apidoc.element.http2.OutgoingMessage.OutgoingMessage">
+        function <span class="apidocSignatureSpan">http2.</span>OutgoingMessage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function OutgoingMessage() {
+  // * This is basically a read-only wrapper for the [Stream](protocol/stream.html) class.
+  Writable.call(this);
+
+  this._headers = {};
+  this._trailers = undefined;
+  this.headersSent = false;
+  this.finished = false;
+
+  this.on('finish', this._finish);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.OutgoingMessage.prototype" id="apidoc.module.http2.OutgoingMessage.prototype">module http2.OutgoingMessage.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.OutgoingMessage.prototype._checkSpecialHeader" id="apidoc.element.http2.OutgoingMessage.prototype._checkSpecialHeader">
+        function <span class="apidocSignatureSpan">http2.OutgoingMessage.prototype.</span>_checkSpecialHeader
+        <span class="apidocSignatureSpan">(key, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _checkSpecialHeader(key, value) {
+  if ((typeof value !== 'string') || (value.length === 0)) {
+    this._log.error({ key: key, value: value }, 'Invalid or missing special header field');
+    this.stream.reset('PROTOCOL_ERROR');
+  }
+
+  return value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.OutgoingMessage.prototype._finish" id="apidoc.element.http2.OutgoingMessage.prototype._finish">
+        function <span class="apidocSignatureSpan">http2.OutgoingMessage.prototype.</span>_finish
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _finish() {
+  if (this.stream) {
+    if (this._trailers) {
+      if (this.request) {
+        this.request.addTrailers(this._trailers);
+      } else {
+        this.stream.headers(this._trailers);
+      }
+    }
+    this.finished = true;
+    this.stream.end();
+  } else {
+    this.once('socket', this._finish.bind(this));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.OutgoingMessage.prototype._write" id="apidoc.element.http2.OutgoingMessage.prototype._write">
+        function <span class="apidocSignatureSpan">http2.OutgoingMessage.prototype.</span>_write
+        <span class="apidocSignatureSpan">(chunk, encoding, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _write(chunk, encoding, callback) {
+  if (this.stream) {
+    this.stream.write(chunk, encoding, callback);
+  } else {
+    this.once('socket', this._write.bind(this, chunk, encoding, callback));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.OutgoingMessage.prototype.addTrailers" id="apidoc.element.http2.OutgoingMessage.prototype.addTrailers">
+        function <span class="apidocSignatureSpan">http2.OutgoingMessage.prototype.</span>addTrailers
+        <span class="apidocSignatureSpan">(trailers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addTrailers(trailers) {
+  this._trailers = trailers;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.OutgoingMessage.prototype.getHeader" id="apidoc.element.http2.OutgoingMessage.prototype.getHeader">
+        function <span class="apidocSignatureSpan">http2.OutgoingMessage.prototype.</span>getHeader
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getHeader(name) {
+  return this._headers[name.toLowerCase()];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.OutgoingMessage.prototype.removeHeader" id="apidoc.element.http2.OutgoingMessage.prototype.removeHeader">
+        function <span class="apidocSignatureSpan">http2.OutgoingMessage.prototype.</span>removeHeader
+        <span class="apidocSignatureSpan">(name)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function removeHeader(name) {
+  if (this.headersSent) {
+    return this.emit('error', new Error('Can\'t remove headers after they are sent.'));
+  } else {
+    delete this._headers[name.toLowerCase()];
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.OutgoingMessage.prototype.setHeader" id="apidoc.element.http2.OutgoingMessage.prototype.setHeader">
+        function <span class="apidocSignatureSpan">http2.OutgoingMessage.prototype.</span>setHeader
+        <span class="apidocSignatureSpan">(name, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setHeader(name, value) {
+  if (this.headersSent) {
+    return this.emit('error', new Error('Can\'t set headers after they are sent.'));
+  } else {
+    name = name.toLowerCase();
+    if (deprecatedHeaders.indexOf(name) !== -1) {
+      return this.emit('error', new Error('Cannot set deprecated header: ' + name));
+    }
+    this._headers[name] = value;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.OutgoingMessage.prototype.setTimeout" id="apidoc.element.http2.OutgoingMessage.prototype.setTimeout">
+        function <span class="apidocSignatureSpan">http2.OutgoingMessage.prototype.</span>setTimeout
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function noop() {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.OutgoingResponse" id="apidoc.module.http2.OutgoingResponse">module http2.OutgoingResponse</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.OutgoingResponse.OutgoingResponse" id="apidoc.element.http2.OutgoingResponse.OutgoingResponse">
+        function <span class="apidocSignatureSpan">http2.</span>OutgoingResponse
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function OutgoingResponse(stream) {
+  OutgoingMessage.call(this);
+
+  this._log = stream._log.child({ component: 'http' });
+
+  this.stream = stream;
+  this.statusCode = 200;
+  this.sendDate = true;
+
+  this.stream.once('headers', this._onRequestHeaders.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.OutgoingResponse.prototype" id="apidoc.module.http2.OutgoingResponse.prototype">module http2.OutgoingResponse.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.OutgoingResponse.prototype._implicitHeader" id="apidoc.element.http2.OutgoingResponse.prototype._implicitHeader">
+        function <span class="apidocSignatureSpan">http2.OutgoingResponse.prototype.</span>_implicitHeader
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_implicitHeader = function () {
+  this._implicitHeaders();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.OutgoingResponse.prototype._implicitHeaders" id="apidoc.element.http2.OutgoingResponse.prototype._implicitHeaders">
+        function <span class="apidocSignatureSpan">http2.OutgoingResponse.prototype.</span>_implicitHeaders
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _implicitHeaders() {
+  if (!this.headersSent) {
+    this.writeHead(this.statusCode);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.OutgoingResponse.prototype._onRequestHeaders" id="apidoc.element.http2.OutgoingResponse.prototype._onRequestHeaders">
+        function <span class="apidocSignatureSpan">http2.OutgoingResponse.prototype.</span>_onRequestHeaders
+        <span class="apidocSignatureSpan">(headers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _onRequestHeaders(headers) {
+  this._requestHeaders = headers;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.OutgoingResponse.prototype.altsvc" id="apidoc.element.http2.OutgoingResponse.prototype.altsvc">
+        function <span class="apidocSignatureSpan">http2.OutgoingResponse.prototype.</span>altsvc
+        <span class="apidocSignatureSpan">(host, port, protocolID, maxAge, origin)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function altsvc(host, port, protocolID, maxAge, origin) {
+    if (origin === undefined) {
+        origin = "";
+    }
+    this.stream.altsvc(host, port, protocolID, maxAge, origin);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.OutgoingResponse.prototype.end" id="apidoc.element.http2.OutgoingResponse.prototype.end">
+        function <span class="apidocSignatureSpan">http2.OutgoingResponse.prototype.</span>end
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function end() {
+  this.finshed = true;
+  this._implicitHeaders();
+  return OutgoingMessage.prototype.end.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+var options = {
+  key: fs.readFileSync('./example/localhost.key'),
+  cert: fs.readFileSync('./example/localhost.crt')
+};
+
+require('http2').createServer(options, function(request, response) {
+  response.<span class="apidocCodeKeywordSpan">end</span>('Hello world!');
+}).listen(8080);
+```
+
+### Using as a client ###
+
+```javascript
+require('http2').get('https://localhost:8080/', function(response) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.OutgoingResponse.prototype.on" id="apidoc.element.http2.OutgoingResponse.prototype.on">
+        function <span class="apidocSignatureSpan">http2.OutgoingResponse.prototype.</span>on
+        <span class="apidocSignatureSpan">(event, listener)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function on(event, listener) {
+  if (this.request &amp;&amp; (event === 'timeout')) {
+    this.request.on(event, listener &amp;&amp; listener.bind(this));
+  } else {
+    OutgoingMessage.prototype.on.call(this, event, listener);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.OutgoingResponse.prototype.push" id="apidoc.element.http2.OutgoingResponse.prototype.push">
+        function <span class="apidocSignatureSpan">http2.OutgoingResponse.prototype.</span>push
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function push(options) {
+  if (typeof options === 'string') {
+    options = url.parse(options);
+  }
+
+  if (!options.path) {
+    throw new Error('`path` option is mandatory.');
+  }
+
+  var promise = util._extend({
+    ':method': (options.method || 'GET').toUpperCase(),
+    ':scheme': (options.protocol &amp;&amp; options.protocol.slice(0, -1)) || this._requestHeaders[':scheme'],
+    ':authority': options.hostname || options.host || this._requestHeaders[':authority'],
+    ':path': options.path
+  }, options.headers);
+
+  this._log.info({ method: promise[':method'], scheme: promise[':scheme'],
+                   authority: promise[':authority'], path: promise[':path'],
+                   headers: options.headers }, 'Promising push stream');
+
+  var pushStream = this.stream.promise(promise);
+
+  return new OutgoingResponse(pushStream);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.OutgoingResponse.prototype.write" id="apidoc.element.http2.OutgoingResponse.prototype.write">
+        function <span class="apidocSignatureSpan">http2.OutgoingResponse.prototype.</span>write
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function write() {
+  this._implicitHeaders();
+  return OutgoingMessage.prototype.write.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.OutgoingResponse.prototype.writeHead" id="apidoc.element.http2.OutgoingResponse.prototype.writeHead">
+        function <span class="apidocSignatureSpan">http2.OutgoingResponse.prototype.</span>writeHead
+        <span class="apidocSignatureSpan">(statusCode, reasonPhrase, headers)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function writeHead(statusCode, reasonPhrase, headers) {
+  if (this.headersSent) {
+    return;
+  }
+
+  if (typeof reasonPhrase === 'string') {
+    this._log.warn('Reason phrase argument was present but ignored by the writeHead method');
+  } else {
+    headers = reasonPhrase;
+  }
+
+  for (var name in headers) {
+    this.setHeader(name, headers[name]);
+  }
+  headers = this._headers;
+
+  if (this.sendDate &amp;&amp; !('date' in this._headers)) {
+    headers.date = (new Date()).toUTCString();
+  }
+
+  this._log.info({ status: statusCode, headers: this._headers }, 'Sending server response');
+
+  headers[':status'] = this.statusCode = statusCode;
+
+  this.stream.headers(headers);
+  this.headersSent = true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.Server" id="apidoc.module.http2.Server">module http2.Server</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.Server.Server" id="apidoc.element.http2.Server.Server">
+        function <span class="apidocSignatureSpan">http2.</span>Server
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Server(options) {
+  options = util._extend({}, options);
+
+  this._log = (options.log || defaultLogger).child({ component: 'http' });
+  this._settings = options.settings;
+
+  var start = this._start.bind(this);
+  var fallback = this._fallback.bind(this);
+
+  // HTTP2 over TLS (using NPN or ALPN)
+  if ((options.key &amp;&amp; options.cert) || options.pfx) {
+    this._log.info('Creating HTTP/2 server over TLS');
+    this._mode = 'tls';
+    options.ALPNProtocols = supportedProtocols;
+    options.NPNProtocols = supportedProtocols;
+    options.ciphers = options.ciphers || cipherSuites;
+    options.honorCipherOrder = (options.honorCipherOrder != false);
+    this._server = https.createServer(options);
+    this._originalSocketListeners = this._server.listeners('secureConnection');
+    this._server.removeAllListeners('secureConnection');
+    this._server.on('secureConnection', function(socket) {
+      var negotiatedProtocol = socket.alpnProtocol || socket.npnProtocol;
+      // It's true that the client MUST use SNI, but if it doesn't, we don't care, don't fall back to HTTP/1,
+      // since if the ALPN negotiation is otherwise successful, the client thinks we speak HTTP/2 but we don't.
+      if (negotiatedProtocol === protocol.VERSION) {
+        start(socket);
+      } else {
+        fallback(socket);
+      }
+    });
+    this._server.on('request', this.emit.bind(this, 'request'));
+
+    forwardEvent('error', this._server, this);
+    forwardEvent('listening', this._server, this);
+  }
+
+  // HTTP2 over plain TCP
+  else if (options.plain) {
+    this._log.info('Creating HTTP/2 server over plain TCP');
+    this._mode = 'plain';
+    this._server = net.createServer(start);
+  }
+
+  // HTTP/2 with HTTP/1.1 upgrade
+  else {
+    this._log.error('Trying to create HTTP/2 server with Upgrade from HTTP/1.1');
+    throw new Error('HTTP1.1 -&gt; HTTP2 upgrade is not yet supported. Please provide TLS keys.');
+  }
+
+  this._server.on('close', this.emit.bind(this, 'close'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.Server.prototype" id="apidoc.module.http2.Server.prototype">module http2.Server.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.Server.prototype._fallback" id="apidoc.element.http2.Server.prototype._fallback">
+        function <span class="apidocSignatureSpan">http2.Server.prototype.</span>_fallback
+        <span class="apidocSignatureSpan">(socket)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _fallback(socket) {
+  var negotiatedProtocol = socket.alpnProtocol || socket.npnProtocol;
+
+  this._log.info({ client: socket.remoteAddress + ':' + socket.remotePort,
+                   protocol: negotiatedProtocol,
+                   SNI: socket.servername
+                 }, 'Falling back to simple HTTPS');
+
+  for (var i = 0; i &lt; this._originalSocketListeners.length; i++) {
+    this._originalSocketListeners[i].call(this._server, socket);
+  }
+
+  this.emit('connection', socket);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.Server.prototype._start" id="apidoc.element.http2.Server.prototype._start">
+        function <span class="apidocSignatureSpan">http2.Server.prototype.</span>_start
+        <span class="apidocSignatureSpan">(socket)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _start(socket) {
+  var endpoint = new Endpoint(this._log, 'SERVER', this._settings);
+
+  this._log.info({ e: endpoint,
+                   client: socket.remoteAddress + ':' + socket.remotePort,
+                   SNI: socket.servername
+                 }, 'New incoming HTTP/2 connection');
+
+  endpoint.pipe(socket).pipe(endpoint);
+
+  var self = this;
+  endpoint.on('stream', function _onStream(stream) {
+    var response = new OutgoingResponse(stream);
+    var request = new IncomingRequest(stream);
+
+    // Some conformance to Node.js Https specs allows to distinguish clients:
+    request.remoteAddress = socket.remoteAddress;
+    request.remotePort = socket.remotePort;
+    request.connection = request.socket = response.socket = socket;
+
+    request.once('ready', self.emit.bind(self, 'request', request, response));
+  });
+
+  endpoint.on('error', this.emit.bind(this, 'clientError'));
+  socket.on('error', this.emit.bind(this, 'clientError'));
+
+  this.emit('connection', socket, endpoint);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.Server.prototype.addContext" id="apidoc.element.http2.Server.prototype.addContext">
+        function <span class="apidocSignatureSpan">http2.Server.prototype.</span>addContext
+        <span class="apidocSignatureSpan">(hostname, credentials)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function addContext(hostname, credentials) {
+  if (this._mode === 'tls') {
+    this._server.addContext(hostname, credentials);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.Server.prototype.address" id="apidoc.element.http2.Server.prototype.address">
+        function <span class="apidocSignatureSpan">http2.Server.prototype.</span>address
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function address() {
+  return this._server.address()
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.Server.prototype.close" id="apidoc.element.http2.Server.prototype.close">
+        function <span class="apidocSignatureSpan">http2.Server.prototype.</span>close
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function close(callback) {
+  this._log.info('Closing server');
+  this._server.close(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.Server.prototype.listen" id="apidoc.element.http2.Server.prototype.listen">
+        function <span class="apidocSignatureSpan">http2.Server.prototype.</span>listen
+        <span class="apidocSignatureSpan">(port, hostname)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function listen(port, hostname) {
+  this._log.info({ on: ((typeof hostname === 'string') ? (hostname + ':' + port) : port) },
+                 'Listening for incoming connections');
+  this._server.listen.apply(this._server, arguments);
+
+  return this._server;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var options = {
+key: fs.readFileSync('./example/localhost.key'),
+cert: fs.readFileSync('./example/localhost.crt')
+};
+
+require('http2').createServer(options, function(request, response) {
+response.end('Hello world!');
+}).<span class="apidocCodeKeywordSpan">listen</span>(8080);
+```
+
+### Using as a client ###
+
+```javascript
+require('http2').get('https://localhost:8080/', function(response) {
+response.pipe(process.stdout);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.Server.prototype.on" id="apidoc.element.http2.Server.prototype.on">
+        function <span class="apidocSignatureSpan">http2.Server.prototype.</span>on
+        <span class="apidocSignatureSpan">(event, listener)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function on(event, listener) {
+  if ((event === 'upgrade') || (event === 'timeout')) {
+    return this._server.on(event, listener &amp;&amp; listener.bind(this));
+  } else {
+    return EventEmitter.prototype.on.call(this, event, listener);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.Server.prototype.setTimeout" id="apidoc.element.http2.Server.prototype.setTimeout">
+        function <span class="apidocSignatureSpan">http2.Server.prototype.</span>setTimeout
+        <span class="apidocSignatureSpan">(timeout, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setTimeout(timeout, callback) {
+  if (this._mode === 'tls') {
+    this._server.setTimeout(timeout, callback);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.http" id="apidoc.module.http2.http">module http2.http</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.http.createServer" id="apidoc.element.http2.http.createServer">
+        function <span class="apidocSignatureSpan">http2.http.</span>createServer
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function notImplemented() {
+    throw new Error('HTTP UPGRADE is not implemented!');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var options = {
+  key: fs.readFileSync('./example/localhost.key'),
+  cert: fs.readFileSync('./example/localhost.crt')
+};
+
+require('http2').<span class="apidocCodeKeywordSpan">createServer</span>(options, function(request, response) {
+  response.end('Hello world!');
+}).listen(8080);
+```
+
+### Using as a client ###
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.http.get" id="apidoc.element.http2.http.get">
+        function <span class="apidocSignatureSpan">http2.http.</span>get
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function notImplemented() {
+    throw new Error('HTTP UPGRADE is not implemented!');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  response.end('Hello world!');
+}).listen(8080);
+```
+
+### Using as a client ###
+
+```javascript
+require('http2').<span class="apidocCodeKeywordSpan">get</span>('https://localhost:8080/', function(response
+) {
+  response.pipe(process.stdout);
+});
+```
+
+### Simple static file server ###
+
+An simple static file server serving up content from its own directory is available in the `example`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.http.request" id="apidoc.element.http2.http.request">
+        function <span class="apidocSignatureSpan">http2.http.</span>request
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function notImplemented() {
+    throw new Error('HTTP UPGRADE is not implemented!');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.https" id="apidoc.module.http2.https">module http2.https</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.https.createServer" id="apidoc.element.http2.https.createServer">
+        function <span class="apidocSignatureSpan">http2.https.</span>createServer
+        <span class="apidocSignatureSpan">(options, requestListener)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createServerTLS(options, requestListener) {
+  if (typeof options === 'function') {
+    throw new Error('options are required!');
+  }
+  if (!options.pfx &amp;&amp; !(options.key &amp;&amp; options.cert)) {
+    throw new Error('options.pfx or options.key and options.cert are required!');
+  }
+  options.plain = false;
+
+  var server = new Server(options);
+
+  if (requestListener) {
+    server.on('request', requestListener);
+  }
+
+  return server;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var options = {
+  key: fs.readFileSync('./example/localhost.key'),
+  cert: fs.readFileSync('./example/localhost.crt')
+};
+
+require('http2').<span class="apidocCodeKeywordSpan">createServer</span>(options, function(request, response) {
+  response.end('Hello world!');
+}).listen(8080);
+```
+
+### Using as a client ###
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.https.get" id="apidoc.element.http2.https.get">
+        function <span class="apidocSignatureSpan">http2.https.</span>get
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getTLS(options, callback) {
+  if (typeof options === "string") {
+    options = url.parse(options);
+  }
+  options.plain = false;
+  if (options.protocol &amp;&amp; options.protocol !== "https:") {
+    throw new Error('This interface only supports https-schemed URLs');
+  }
+  if (options.agent &amp;&amp; typeof(options.agent.get) === 'function') {
+    var agentOptions = util._extend({}, options);
+    delete agentOptions.agent;
+    return options.agent.get(agentOptions, callback);
+  }
+  return exports.globalAgent.get(options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  response.end('Hello world!');
+}).listen(8080);
+```
+
+### Using as a client ###
+
+```javascript
+require('http2').<span class="apidocCodeKeywordSpan">get</span>('https://localhost:8080/', function(response
+) {
+  response.pipe(process.stdout);
+});
+```
+
+### Simple static file server ###
+
+An simple static file server serving up content from its own directory is available in the `example`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.https.request" id="apidoc.element.http2.https.request">
+        function <span class="apidocSignatureSpan">http2.https.</span>request
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function requestTLS(options, callback) {
+  if (typeof options === "string") {
+    options = url.parse(options);
+  }
+  options.plain = false;
+  if (options.protocol &amp;&amp; options.protocol !== "https:") {
+    throw new Error('This interface only supports https-schemed URLs');
+  }
+  if (options.agent &amp;&amp; typeof(options.agent.request) === 'function') {
+    var agentOptions = util._extend({}, options);
+    delete agentOptions.agent;
+    return options.agent.request(agentOptions, callback);
+  }
+  return exports.globalAgent.request(options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.protocol" id="apidoc.module.http2.protocol">module http2.protocol</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.protocol.Endpoint" id="apidoc.element.http2.protocol.Endpoint">
+        function <span class="apidocSignatureSpan">http2.protocol.</span>Endpoint
+        <span class="apidocSignatureSpan">(log, role, settings, filters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Endpoint(log, role, settings, filters) {
+  Duplex.call(this);
+
+  // * Initializing logging infrastructure
+  this._log = log.child({ component: 'endpoint', e: this });
+
+  // * First part of the handshake process: sending and receiving the client connection header
+  //   prelude.
+  assert((role === 'CLIENT') || role === 'SERVER');
+  if (role === 'CLIENT') {
+    this._writePrelude();
+  } else {
+    this._readPrelude();
+  }
+
+  // * Initialization of component. This includes the second part of the handshake process:
+  //   sending the first SETTINGS frame. This is done by the connection class right after
+  //   initialization.
+  this._initializeDataFlow(role, settings, filters || {});
+
+  // * Initialization of management code.
+  this._initializeManagement();
+
+  // * Initializing error handling.
+  this._initializeErrorHandling();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.protocol.Endpoint" id="apidoc.module.http2.protocol.Endpoint">module http2.protocol.Endpoint</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.protocol.Endpoint.Endpoint" id="apidoc.element.http2.protocol.Endpoint.Endpoint">
+        function <span class="apidocSignatureSpan">http2.protocol.</span>Endpoint
+        <span class="apidocSignatureSpan">(log, role, settings, filters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Endpoint(log, role, settings, filters) {
+  Duplex.call(this);
+
+  // * Initializing logging infrastructure
+  this._log = log.child({ component: 'endpoint', e: this });
+
+  // * First part of the handshake process: sending and receiving the client connection header
+  //   prelude.
+  assert((role === 'CLIENT') || role === 'SERVER');
+  if (role === 'CLIENT') {
+    this._writePrelude();
+  } else {
+    this._readPrelude();
+  }
+
+  // * Initialization of component. This includes the second part of the handshake process:
+  //   sending the first SETTINGS frame. This is done by the connection class right after
+  //   initialization.
+  this._initializeDataFlow(role, settings, filters || {});
+
+  // * Initialization of management code.
+  this._initializeManagement();
+
+  // * Initializing error handling.
+  this._initializeErrorHandling();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.protocol.Endpoint.prototype" id="apidoc.module.http2.protocol.Endpoint.prototype">module http2.protocol.Endpoint.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.protocol.Endpoint.prototype._error" id="apidoc.element.http2.protocol.Endpoint.prototype._error">
+        function <span class="apidocSignatureSpan">http2.protocol.Endpoint.prototype.</span>_error
+        <span class="apidocSignatureSpan">(component, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _error(component, error) {
+  this._log.fatal({ source: component, message: error }, 'Fatal error, closing connection');
+  this.close(error);
+  setImmediate(this.emit.bind(this, 'error', error));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.protocol.Endpoint.prototype._initializeDataFlow" id="apidoc.element.http2.protocol.Endpoint.prototype._initializeDataFlow">
+        function <span class="apidocSignatureSpan">http2.protocol.Endpoint.prototype.</span>_initializeDataFlow
+        <span class="apidocSignatureSpan">(role, settings, filters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _initializeDataFlow(role, settings, filters) {
+  var firstStreamId, compressorRole, decompressorRole;
+  if (role === 'CLIENT') {
+    firstStreamId = 1;
+    compressorRole = 'REQUEST';
+    decompressorRole = 'RESPONSE';
+  } else {
+    firstStreamId = 2;
+    compressorRole = 'RESPONSE';
+    decompressorRole = 'REQUEST';
+  }
+
+  this._serializer   = new Serializer(this._log);
+  this._deserializer = new Deserializer(this._log);
+  this._compressor   = new Compressor(this._log, compressorRole);
+  this._decompressor = new Decompressor(this._log, decompressorRole);
+  this._connection   = new Connection(this._log, firstStreamId, settings);
+
+  pipeAndFilter(this._connection, this._compressor, filters.beforeCompression);
+  pipeAndFilter(this._compressor, this._serializer, filters.beforeSerialization);
+  pipeAndFilter(this._deserializer, this._decompressor, filters.afterDeserialization);
+  pipeAndFilter(this._decompressor, this._connection, filters.afterDecompression);
+
+  this._connection.on('ACKNOWLEDGED_SETTINGS_HEADER_TABLE_SIZE',
+                      this._decompressor.setTableSizeLimit.bind(this._decompressor));
+  this._connection.on('RECEIVING_SETTINGS_HEADER_TABLE_SIZE',
+                      this._compressor.setTableSizeLimit.bind(this._compressor));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.protocol.Endpoint.prototype._initializeErrorHandling" id="apidoc.element.http2.protocol.Endpoint.prototype._initializeErrorHandling">
+        function <span class="apidocSignatureSpan">http2.protocol.Endpoint.prototype.</span>_initializeErrorHandling
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _initializeErrorHandling() {
+  this._serializer.on('error', this._error.bind(this, 'serializer'));
+  this._deserializer.on('error', this._error.bind(this, 'deserializer'));
+  this._compressor.on('error', this._error.bind(this, 'compressor'));
+  this._decompressor.on('error', this._error.bind(this, 'decompressor'));
+  this._connection.on('error', this._error.bind(this, 'connection'));
+
+  this._connection.on('peerError', this.emit.bind(this, 'peerError'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.protocol.Endpoint.prototype._initializeManagement" id="apidoc.element.http2.protocol.Endpoint.prototype._initializeManagement">
+        function <span class="apidocSignatureSpan">http2.protocol.Endpoint.prototype.</span>_initializeManagement
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _initializeManagement() {
+  this._connection.on('stream', this.emit.bind(this, 'stream'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.protocol.Endpoint.prototype._read" id="apidoc.element.http2.protocol.Endpoint.prototype._read">
+        function <span class="apidocSignatureSpan">http2.protocol.Endpoint.prototype.</span>_read
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _read() {
+  this._readableState.sync = true;
+  var moreNeeded = noread, chunk;
+  while (moreNeeded &amp;&amp; (chunk = this._serializer.read())) {
+    moreNeeded = this.push(chunk);
+  }
+  if (moreNeeded === noread) {
+    this._serializer.once('readable', this._read.bind(this));
+  }
+  this._readableState.sync = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.protocol.Endpoint.prototype._readPrelude" id="apidoc.element.http2.protocol.Endpoint.prototype._readPrelude">
+        function <span class="apidocSignatureSpan">http2.protocol.Endpoint.prototype.</span>_readPrelude
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _readPrelude() {
+  // * progress in the header is tracker using a `cursor`
+  var cursor = 0;
+
+  // * `_write` is temporarily replaced by the comparator function
+  this._write = function _temporalWrite(chunk, encoding, done) {
+    // * which compares the stored header with the current `chunk` byte by byte and emits the
+    //   'error' event if there's a byte that doesn't match
+    var offset = cursor;
+    while(cursor &lt; CLIENT_PRELUDE.length &amp;&amp; (cursor - offset) &lt; chunk.length) {
+      if (CLIENT_PRELUDE[cursor] !== chunk[cursor - offset]) {
+        this._log.fatal({ cursor: cursor, offset: offset, chunk: chunk },
+                        'Client connection header prelude does not match.');
+        this._error('handshake', 'PROTOCOL_ERROR');
+        return;
+      }
+      cursor += 1;
+    }
+
+    // * if the whole header is over, and there were no error then restore the original `_write`
+    //   and call it with the remaining part of the current chunk
+    if (cursor === CLIENT_PRELUDE.length) {
+      this._log.debug('Successfully received the client connection header prelude.');
+      delete this._write;
+      chunk = chunk.slice(cursor - offset);
+      this._write(chunk, encoding, done);
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.protocol.Endpoint.prototype._write" id="apidoc.element.http2.protocol.Endpoint.prototype._write">
+        function <span class="apidocSignatureSpan">http2.protocol.Endpoint.prototype.</span>_write
+        <span class="apidocSignatureSpan">(chunk, encoding, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _write(chunk, encoding, done) {
+  this._deserializer.write(chunk, encoding, done);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.protocol.Endpoint.prototype._writePrelude" id="apidoc.element.http2.protocol.Endpoint.prototype._writePrelude">
+        function <span class="apidocSignatureSpan">http2.protocol.Endpoint.prototype.</span>_writePrelude
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function _writePrelude() {
+  this._log.debug('Sending the client connection header prelude.');
+  this.push(CLIENT_PRELUDE);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.protocol.Endpoint.prototype.close" id="apidoc.element.http2.protocol.Endpoint.prototype.close">
+        function <span class="apidocSignatureSpan">http2.protocol.Endpoint.prototype.</span>close
+        <span class="apidocSignatureSpan">(error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function close(error) {
+  this._connection.close(error);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.protocol.Endpoint.prototype.createStream" id="apidoc.element.http2.protocol.Endpoint.prototype.createStream">
+        function <span class="apidocSignatureSpan">http2.protocol.Endpoint.prototype.</span>createStream
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createStream() {
+  return this._connection.createStream();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.raw" id="apidoc.module.http2.raw">module http2.raw</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.raw.createServer" id="apidoc.element.http2.raw.createServer">
+        function <span class="apidocSignatureSpan">http2.raw.</span>createServer
+        <span class="apidocSignatureSpan">(options, requestListener)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createServerRaw(options, requestListener) {
+  if (typeof options === 'function') {
+    requestListener = options;
+    options = {};
+  }
+
+  if (options.pfx || (options.key &amp;&amp; options.cert)) {
+    throw new Error('options.pfx, options.key, and options.cert are nonsensical!');
+  }
+
+  options.plain = true;
+  var server = new Server(options);
+
+  if (requestListener) {
+    server.on('request', requestListener);
+  }
+
+  return server;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+var options = {
+  key: fs.readFileSync('./example/localhost.key'),
+  cert: fs.readFileSync('./example/localhost.crt')
+};
+
+require('http2').<span class="apidocCodeKeywordSpan">createServer</span>(options, function(request, response) {
+  response.end('Hello world!');
+}).listen(8080);
+```
+
+### Using as a client ###
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.raw.get" id="apidoc.element.http2.raw.get">
+        function <span class="apidocSignatureSpan">http2.raw.</span>get
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getRaw(options, callback) {
+  if (typeof options === "string") {
+    options = url.parse(options);
+  }
+  options.plain = true;
+  if (options.protocol &amp;&amp; options.protocol !== "http:") {
+    throw new Error('This interface only supports http-schemed URLs');
+  }
+  if (options.agent &amp;&amp; typeof(options.agent.get) === 'function') {
+    var agentOptions = util._extend({}, options);
+    delete agentOptions.agent;
+    return options.agent.get(agentOptions, callback);
+  }
+  return exports.globalAgent.get(options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  response.end('Hello world!');
+}).listen(8080);
+```
+
+### Using as a client ###
+
+```javascript
+require('http2').<span class="apidocCodeKeywordSpan">get</span>('https://localhost:8080/', function(response
+) {
+  response.pipe(process.stdout);
+});
+```
+
+### Simple static file server ###
+
+An simple static file server serving up content from its own directory is available in the `example`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.raw.request" id="apidoc.element.http2.raw.request">
+        function <span class="apidocSignatureSpan">http2.raw.</span>request
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function requestRaw(options, callback) {
+  if (typeof options === "string") {
+    options = url.parse(options);
+  }
+  options.plain = true;
+  if (options.protocol &amp;&amp; options.protocol !== "http:") {
+    throw new Error('This interface only supports http-schemed URLs');
+  }
+  if (options.agent &amp;&amp; typeof(options.agent.request) === 'function') {
+    var agentOptions = util._extend({}, options);
+    delete agentOptions.agent;
+    return options.agent.request(agentOptions, callback);
+  }
+  return exports.globalAgent.request(options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.http2.serializers" id="apidoc.module.http2.serializers">module http2.serializers</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.http2.serializers.data" id="apidoc.element.http2.serializers.data">
+        function <span class="apidocSignatureSpan">http2.serializers.</span>data
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">data = function (data) {
+  return data.toString('hex');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.serializers.e" id="apidoc.element.http2.serializers.e">
+        function <span class="apidocSignatureSpan">http2.serializers.</span>e
+        <span class="apidocSignatureSpan">(endpoint)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">e = function (endpoint) {
+  if (!('id' in endpoint)) {
+    endpoint.id = nextId;
+    nextId += 1;
+  }
+  return endpoint.id;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.serializers.frame" id="apidoc.element.http2.serializers.frame">
+        function <span class="apidocSignatureSpan">http2.serializers.</span>frame
+        <span class="apidocSignatureSpan">(frame)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">frame = function (frame) {
+  if (!frame) {
+    return null;
+  }
+
+  if ('id' in frame) {
+    return frame.id;
+  }
+
+  frame.id = frameCounter;
+  frameCounter += 1;
+
+  var logEntry = { id: frame.id };
+  genericAttributes.concat(typeSpecificAttributes[frame.type]).forEach(function(name) {
+    logEntry[name] = frame[name];
+  });
+
+  if (frame.data instanceof Buffer) {
+    if (logEntry.data.length &gt; 50) {
+      logEntry.data = frame.data.slice(0, 47).toString('hex') + '...';
+    } else {
+      logEntry.data = frame.data.toString('hex');
+    }
+
+    if (!('length' in logEntry)) {
+      logEntry.length = frame.data.length;
+    }
+  }
+
+  if (frame.promised_stream instanceof Object) {
+    logEntry.promised_stream = 'stream-' + frame.promised_stream.id;
+  }
+
+  logEntry.flags = Object.keys(frame.flags || {}).filter(function(name) {
+    return frame.flags[name] === true;
+  });
+
+  return logEntry;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.http2.serializers.s" id="apidoc.element.http2.serializers.s">
+        function <span class="apidocSignatureSpan">http2.serializers.</span>s
+        <span class="apidocSignatureSpan">(stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">s = function (stream) {
+  if (!('_id' in stream)) {
+    stream._id = nextId;
+    nextId += 1;
+  }
+  return stream._id;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
