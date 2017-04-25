@@ -1,7 +1,7 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
     "buildNpmdoc": "http2",
-    "description": "api documentation for [http2 (v3.3.6)](https://github.com/molnarg/node-http2) [![npm package](https://img.shields.io/npm/v/npmdoc-http2.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-http2) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-http2.svg)](https://travis-ci.org/npmdoc/node-npmdoc-http2)",
+    "description": "#### basic api documentation for  [http2 (v3.3.6)](https://github.com/molnarg/node-http2)  [![npm package](https://img.shields.io/npm/v/npmdoc-http2.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-http2) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-http2.svg)](https://travis-ci.org/npmdoc/node-npmdoc-http2)",
     "devDependencies": {
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
         "http2": "*",

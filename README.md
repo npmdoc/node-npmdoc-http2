@@ -1,4 +1,7 @@
-# api documentation for  [http2 (v3.3.6)](https://github.com/molnarg/node-http2)  [![npm package](https://img.shields.io/npm/v/npmdoc-http2.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-http2) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-http2.svg)](https://travis-ci.org/npmdoc/node-npmdoc-http2)
+# npmdoc-http2
+
+#### basic api documentation for  [http2 (v3.3.6)](https://github.com/molnarg/node-http2)  [![npm package](https://img.shields.io/npm/v/npmdoc-http2.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-http2) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-http2.svg)](https://travis-ci.org/npmdoc/node-npmdoc-http2)
+
 #### An HTTP/2 client and server implementation
 
 [![NPM](https://nodei.co/npm/http2.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/http2)
@@ -93,7 +96,8 @@
         "doc": "docco lib/* --output doc --layout parallel --template root.jst --css doc/docco.css && docco lib/protocol/* --output doc/protocol --layout parallel --template protocol.jst --css doc/docco.css",
         "test": "istanbul test _mocha -- --reporter spec --slow 500 --timeout 15000"
     },
-    "version": "3.3.6"
+    "version": "3.3.6",
+    "bin": {}
 }
 ```
 
